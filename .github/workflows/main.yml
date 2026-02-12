@@ -1,0 +1,36 @@
+name: Monitorizare Note ASE
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:      
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout cod
+        uses: actions/checkout@v3
+
+      - name: Configurare Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Instalare librarii
+        run: pip install requests beautifulsoup4
+
+      - name: Executare script
+        env:
+          STUDENT_USER: ${{ secrets.STUDENT_USER }}
+          STUDENT_PASS: ${{ secrets.STUDENT_PASS }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python webstudent.py
+
+      - name: Salvare modificari note
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add note_vechi.json
+          git commit -m "Actualizare note_vechi.json" || exit 0
+          git push
