@@ -1,7 +1,7 @@
 # ASE GradeWatcher
 
 As a 2nd-year **Economic Cybernetics (CSIE)** student at ASE Bucharest, I’ve learned that the most stressful part of an exam isn't the test itself - it's the endless waiting for the results. 
-We've all been there: waking up at 3 AM just to hit "Refresh" on the Webstudent portal, hoping the POO or Statistics grade finally appeared. After a few sleepless nights, I decided to let a script do the "heavy lifting" for me. That’s how **GradeWatcher** was born.
+We've all been there: waking up at 3 AM just to hit "Refresh" on the Webstudent portal, hoping the OOP or Statistics grade finally appeared. After a few sleepless nights, I decided to let a script do the "heavy lifting" for me. That’s how **GradeWatcher** was born.
 
 ### What it Does
 This isn't just a script - it's a fully autonomous monitoring system:
